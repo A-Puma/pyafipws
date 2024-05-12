@@ -246,6 +246,7 @@ class NSISScript(object):
             ver = ver[: ver.index("-")]
         rev = self.version.endswith("-full") and ".1" or ".0"
         ver = [c in "0123456789." and c or ".%s" % (ord(c) - 96) for c in ver] + [rev]
+        print(nsi_base_script)
         ofi.write(
             nsi_base_script
             % {
@@ -304,6 +305,7 @@ class NSISScript(object):
                 ),
             }
         )
+        ofi.close
 
     def compile(self, pathname="base.nsi"):
         os.startfile(pathname, "compile")

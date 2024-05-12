@@ -27,7 +27,7 @@ except:
 
 __version__ = "%s.%s.%s" % (sys.version_info[0:2] + (rev, ))
 
-HOMO = True
+HOMO = False
 
 # build a one-click-installer for windows:
 import py2exe
@@ -44,18 +44,18 @@ from pyafipws import wsfev1, rece1, rg3685
 #import wsmtx, recem
 #import wsct, recet
 #import wsfecred
-#import ws_sr_padron
-#from pyafipws import pyfepdf
+import ws_sr_padron
+from pyafipws import pyfepdf
 #import pyemail
 #import pyi25
-#from pyafipws import pyqr
+from pyafipws import pyqr
 #import ws_sire
 #import wsctg
 #import wslpg
 #import wsltv
 #import wslum
 #import wslsp
-#import wsremcarne
+import wsremcarne
 #import wsremharina
 #import wsremazucar
 #import wscoc
@@ -146,7 +146,7 @@ for mod in ['socks', 'dbhash', 'gdbm', 'dbm', 'dumbdbm', 'anydbm']:
 # don't pull in all this MFC stuff used by the makepy UI.
 excludes=["pywin", "pywin.dialogs", "pywin.dialogs.list", "win32ui",
             "Tkconstants","Tkinter","tcl",
-            "_imagingtk", "PIL._imagingtk", "ImageTk", "PIL.ImageTk", "FixTk",
+            "_imagingtk", "FixTk",
             ]
 
 # basic options for py2exe
@@ -624,6 +624,7 @@ long_desc = ("Interfases, herramientas y aplicativos para Servicios Web"
 setup(name="PyAfipWs",
       version=__version__,
       description=desc,
+      zip_safe = False,
       long_description=long_desc,
       author="Mariano Reingart",
       author_email="reingart@gmail.com",
