@@ -35,6 +35,8 @@ import time
 import traceback
 import unicodedata
 import warnings
+warnings.simplefilter('ignore', category=UserWarning)
+
 
 from pysimplesoap.client import SimpleXMLElement
 from pyafipws.utils import (

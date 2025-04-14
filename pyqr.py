@@ -63,6 +63,7 @@ class PyQR(object):
 
     _reg_progid_ = "PyQR"
     _reg_clsid_ = "{B176B1CE-E7B5-4BB2-ADEC-9EB9F249DF07}"
+    _reg_class_spec_ = "pyafipws.pyqr.PyQR"
 
     if TYPELIB:
         _typelib_guid_ = '{418C11BF-1051-4B51-95CE-638DC3686634}'

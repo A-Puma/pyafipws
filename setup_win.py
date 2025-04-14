@@ -327,14 +327,14 @@ if 'pyi25' in globals():
     __version__ += "+pyi25_" + pyi25.__version__
 
 if 'pyqr' in globals():
-    kwargs['com_server'] += [
-        Target(module=pyqr, modules="pyqr", create_exe=False, create_dll=True),
+#   kwargs['com_server'] += [
+#        Target(module=pyqr, modules="pyqr", create_exe=False, create_dll=True),
+#        ]
+    kwargs['windows'] += [
+        Target(module=pyqr, script="pyqr.py", dest_base="pyqr_com"),
         ]
     kwargs['console'] += [
         Target(module=pyqr, script='pyqr.py', dest_base="pyqr"),
-        ]
-    kwargs['windows'] += [
-        Target(module=pyqr, script="pyqr.py", dest_base="pyqr_com"),
         ]
     data_files += [
         ]
